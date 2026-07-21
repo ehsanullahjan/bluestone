@@ -1,0 +1,41 @@
+{
+  "default": [
+    {
+      "type": "reject"
+    }
+  ],
+  "transports": {
+    "containers-storage": {
+      "": [{ "type": "insecureAcceptAnything" }]
+    },
+    "docker-daemon": {
+      "": [{ "type": "insecureAcceptAnything" }]
+    },
+    "docker": {
+      "docker.io": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ],
+      "ghcr.io": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ],
+      "ghcr.io/ehsanullahjan/yellowstone": [
+        {
+          "type": "sigstoreSigned",
+          "keyPath": "/usr/lib/pki/containers/bluestone.pub",
+          "signedIdentity": {
+            "type": "matchRepository"
+          }
+        }
+      ],
+      "quay.io": [
+        {
+          "type": "insecureAcceptAnything"
+        }
+      ]
+    }
+  }
+}

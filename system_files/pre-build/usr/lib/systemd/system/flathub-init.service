@@ -1,0 +1,17 @@
+[Unit]
+Description=Initialize Flathub Flatpak repository
+ConditionPathExists=!/var/lib/flatpak/.flathub-initialized
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+ExecStart=/usr/bin/flatpak remote-add --system --if-not-exists --title "Flathub" flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+ExecStartPost=/usr/bin/touch /var/lib/flatpak/.flathub-initialized
+
+TimeoutStopFailureMode=abort
+
+[Install]
+WantedBy=multi-user.target
