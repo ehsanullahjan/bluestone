@@ -338,7 +338,7 @@ build-raw $target_image=("localhost/" + image_name) $tag=default_tag: && (_build
 
 # Build an ISO virtual machine image
 [group('Build Virtual Machine Image')]
-build-iso $target_image=("localhost/" + image_name) $tag=default_tag: && (_build-bib target_image tag "iso" "disk_config/iso-gnome.toml")
+build-iso $target_image=("localhost/" + image_name) $tag=default_tag: && (_build-bib target_image tag "iso" "disk_config/iso-cosmic.toml")
 
 # Rebuild a QCOW2 virtual machine image
 [group('Build Virtual Machine Image')]
@@ -350,7 +350,7 @@ rebuild-raw $target_image=("localhost/" + image_name) $tag=default_tag: && (_reb
 
 # Rebuild an ISO virtual machine image
 [group('Build Virtual Machine Image')]
-rebuild-iso $target_image=("localhost/" + image_name) $tag=default_tag: && (_rebuild-bib target_image tag "iso" "disk_config/iso-gnome.toml")
+rebuild-iso $target_image=("localhost/" + image_name) $tag=default_tag: && (_rebuild-bib target_image tag "iso" "disk_config/iso-cosmic.toml")
 
 # Run a virtual machine with the specified image type and configuration
 _run-vm $target_image $tag $type $config:
@@ -404,7 +404,7 @@ run-vm-raw $target_image=("localhost/" + image_name) $tag=default_tag: && (_run-
 
 # Run a virtual machine from an ISO
 [group('Run Virtual Machine')]
-run-vm-iso $target_image=("localhost/" + image_name) $tag=default_tag: && (_run-vm target_image tag "iso" "disk_config/iso-gnome.toml")
+run-vm-iso $target_image=("localhost/" + image_name) $tag=default_tag: && (_run-vm target_image tag "iso" "disk_config/iso-cosmic.toml")
 
 # Run a virtual machine using systemd-vmspawn
 [group('Run Virtual Machine')]
