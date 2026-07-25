@@ -16,7 +16,6 @@ set -euxo pipefail
 
 /ctx/build_files/install/carapace.sh
 /ctx/build_files/install/dysk.sh
-/ctx/build_files/install/fonts.sh
 /ctx/build_files/install/git.sh
 /ctx/build_files/install/packages.sh
 /ctx/build_files/install/starship.sh
