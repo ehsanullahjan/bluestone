@@ -1,24 +1,27 @@
 #!/bin/bash
 
-set -ouex pipefail
+set -euxo pipefail
 
-### Install packages
+/ctx/build_files/pre-build.sh
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
+/ctx/build_files/install/rocm.sh
+/ctx/build_files/install/rpmfusion.sh
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+/ctx/build_files/install/docker.sh
+/ctx/build_files/install/podman.sh
+/ctx/build_files/install/libvirt.sh
+/ctx/build_files/install/tailscale.sh
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+/ctx/build_files/install/sysmon.sh
 
-#### Example for enabling a System Unit File
+/ctx/build_files/install/carapace.sh
+/ctx/build_files/install/dysk.sh
+/ctx/build_files/install/git.sh
+/ctx/build_files/install/packages.sh
+/ctx/build_files/install/starship.sh
+/ctx/build_files/install/yazi.sh
 
-systemctl enable podman.socket
+/ctx/build_files/install/1password.sh
+/ctx/build_files/install/flatpaks.sh
+
+/ctx/build_files/post-build.sh
