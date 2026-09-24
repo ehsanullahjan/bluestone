@@ -9,16 +9,21 @@ dnf -y remove "${EXCLUDED_PACKAGES[@]}"
 
 INCLUDED_PACKAGES=(
 	alacritty
+	autofs
 	bat
+	borgbackup
+	carapace
 	dbus-daemon
 	ddcutil
 	distrobox
+	dysk
 	eza
 	fastfetch
 	fd-find
 	fzf
 	grc
 	ripgrep
+	starship
 	tealdeer
 	tmux
 	trash-cli
@@ -27,4 +32,4 @@ INCLUDED_PACKAGES=(
 	zoxide
 	zsh
 )
-dnf -y install "${INCLUDED_PACKAGES[@]}"
+dnf -y --enable-repo terra install "${INCLUDED_PACKAGES[@]}"
