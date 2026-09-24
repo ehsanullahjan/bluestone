@@ -1,10 +1,12 @@
+ARG FEDORA_MAJOR_VERSION="44"
+
 # Allow build scripts to be referenced without being copied into the final image
 FROM scratch AS ctx
 COPY build_files /build_files
 COPY system_files /system_files
 
 # Base Image
-FROM quay.io/fedora-ostree-desktops/cosmic-atomic:44
+FROM quay.io/fedora-ostree-desktops/cosmic-atomic:${FEDORA_MAJOR_VERSION}
 
 ### [IM]MUTABLE /opt
 ## Some bootable images, like Fedora, have /opt symlinked to /var/opt, in order to
