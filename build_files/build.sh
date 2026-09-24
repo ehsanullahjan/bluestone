@@ -10,6 +10,7 @@ set -euxo pipefail
 /ctx/build_files/install/montools.sh
 /ctx/build_files/install/systools.sh
 
+/ctx/build_files/install/network.sh
 /ctx/build_files/install/vpn.sh
 
 /ctx/build_files/install/docker.sh
