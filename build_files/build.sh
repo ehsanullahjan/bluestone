@@ -4,7 +4,6 @@ set -euxo pipefail
 
 /ctx/build_files/pre-build.sh
 
-/ctx/build_files/install/rocm.sh
 /ctx/build_files/install/rpmfusion.sh
 
 /ctx/build_files/install/montools.sh
