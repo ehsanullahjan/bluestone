@@ -4,7 +4,7 @@ set -euxo pipefail
 
 # Install terra-mesa repo with online gpgkey (instead of file://). This workaround
 # for https://github.com/osbuild/bootc-image-builder/issues/1188 unblocks ISO builds.
-# Once issuse #1188 is fixed, we can consider reverting this.
+# Once issue #1188 is fixed, we can consider reverting this.
 cat <<-'EOF' >/etc/yum.repos.d/terra-mesa.repo
 	[terra-mesa]
 	name=Terra $releasever (Mesa)
