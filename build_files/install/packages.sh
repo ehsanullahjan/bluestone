@@ -11,10 +11,8 @@ INCLUDED_PACKAGES=(
 	alacritty
 	autofs
 	bat
-	borgbackup
 	carapace
 	dbus-daemon
-	ddcutil
 	distrobox
 	dysk
 	eza
