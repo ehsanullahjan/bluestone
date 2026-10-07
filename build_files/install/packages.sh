@@ -12,6 +12,7 @@ INCLUDED_PACKAGES=(
 	autofs
 	bat
 	carapace
+	chezmoi
 	dbus-daemon
 	distrobox
 	dysk
