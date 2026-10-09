@@ -16,4 +16,6 @@ enable = [
   "org.fedoraproject.Anaconda.Modules.Timezone",
 ]
 
-disable = ["org.fedoraproject.Anaconda.Modules.Subscription"]
+disable = [
+  "org.fedoraproject.Anaconda.Modules.Subscription",
+]
